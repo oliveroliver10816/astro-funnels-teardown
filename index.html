@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="dark">
+<title>Facebook Astrology Funnels: Business-Model Teardown + AI-Kundli Build Blueprint</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230b0a18%22/%3E%3Cpath%20d%3D%22M16%204.2%20L17.9%2013.1%20L26.8%2015%20L17.9%2016.9%20L16%2025.8%20L14.1%2016.9%20L5.2%2015%20L14.1%2013.1%20Z%22%20fill%3D%22%23e7b24c%22/%3E%3Ccircle%20cx%3D%2224.5%22%20cy%3D%227.5%22%20r%3D%221.1%22%20fill%3D%22%23c3b0ff%22/%3E%3Ccircle%20cx%3D%227%22%20cy%3D%2224%22%20r%3D%220.9%22%20fill%3D%22%23ffffff%22/%3E%3C/svg%3E">
+<style>
+:root{
+  --void:#08070f; --void-2:#0b0a16; --surface:#100e1c; --surface-2:#171331;
+  --raise:#1c1838; --line:#2c2850; --line-soft:#211d3c;
+  --ink:#eeecf7; --ink-2:#b7b2d4; --ink-3:#8682a3;
+  --gold:#e7b24c; --gold-2:#f4d287; --fig:#f2cf88;
+  --violet:#a98bff; --violet-2:#c6b4ff;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono","SFMono-Regular","SF Mono",ui-monospace,"Cascadia Code",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{
+  margin:0;background:var(--void);color:var(--ink-2);
+  font-family:var(--sans);font-size:15px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  background-image:radial-gradient(1200px 600px at 82% -8%, rgba(169,139,255,.10), transparent 60%),
+    radial-gradient(900px 500px at 8% 2%, rgba(231,178,76,.06), transparent 55%);
+  background-attachment:fixed;
+}
+.page{width:100%;padding:clamp(16px,2.6vw,40px) clamp(14px,3vw,52px) 72px}
+::selection{background:rgba(231,178,76,.28);color:#fff}
+a{color:var(--violet-2);text-decoration:none;border-bottom:1px solid rgba(198,180,255,.35)}
+a:hover{color:#fff;border-bottom-color:var(--violet)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+
+/* masthead */
+.mast{position:relative;overflow:hidden;border:1px solid var(--line);
+  border-radius:18px;background:linear-gradient(180deg,#0e0c1e 0%,#0a0914 100%);
+  padding:clamp(26px,3.4vw,52px) clamp(22px,3.4vw,56px);margin-bottom:34px}
+.mast::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.9;
+  background-image:
+    radial-gradient(1.4px 1.4px at 12% 24%,rgba(255,255,255,.9),transparent),
+    radial-gradient(1.2px 1.2px at 26% 62%,rgba(255,255,255,.55),transparent),
+    radial-gradient(1.6px 1.6px at 40% 18%,rgba(231,178,76,.85),transparent),
+    radial-gradient(1.1px 1.1px at 55% 74%,rgba(255,255,255,.5),transparent),
+    radial-gradient(1.3px 1.3px at 68% 34%,rgba(198,180,255,.85),transparent),
+    radial-gradient(1.5px 1.5px at 79% 12%,rgba(255,255,255,.75),transparent),
+    radial-gradient(1.1px 1.1px at 88% 58%,rgba(231,178,76,.7),transparent),
+    radial-gradient(1.2px 1.2px at 93% 30%,rgba(255,255,255,.6),transparent),
+    radial-gradient(1px 1px at 6% 80%,rgba(255,255,255,.5),transparent),
+    radial-gradient(1.3px 1.3px at 34% 88%,rgba(198,180,255,.6),transparent),
+    radial-gradient(1px 1px at 62% 92%,rgba(255,255,255,.45),transparent);
+  animation:tw 7s ease-in-out infinite alternate}
+.mast::after{content:"";position:absolute;top:-40%;right:-6%;width:520px;height:520px;pointer-events:none;
+  background:radial-gradient(circle,rgba(169,139,255,.16),transparent 62%)}
+@keyframes tw{from{opacity:.55}to{opacity:1}}
+.mast>*{position:relative;z-index:1}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 18px}
+.eyebrow .dot{color:var(--ink-3);margin:0 9px}
+h1{font-family:var(--serif);font-weight:600;color:var(--ink);
+  font-size:clamp(29px,4vw,58px);line-height:1.04;letter-spacing:-.01em;margin:0 0 16px;max-width:24ch}
+.sub{font-size:clamp(15px,1.35vw,19px);color:var(--ink-2);line-height:1.5;max-width:96ch;margin:0}
+.sub em{color:var(--gold-2);font-style:normal}
+.rule{height:1px;margin:26px 0 20px;border:0;
+  background:linear-gradient(90deg,var(--gold),rgba(231,178,76,.15) 42%,transparent)}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--ink-2);
+  background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:999px;padding:6px 13px;white-space:nowrap}
+
+/* tl;dr */
+.tldr{border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:14px;
+  background:linear-gradient(180deg,rgba(231,178,76,.05),rgba(231,178,76,0) 40%),var(--surface);
+  padding:clamp(20px,2.4vw,32px);margin-bottom:46px}
+.tldr .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 4px}
+.tldr h2{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:clamp(19px,1.9vw,25px);margin:0 0 20px}
+.tldr ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 40px}
+.tldr li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.tldr li strong{color:var(--ink);font-weight:650}
+.spark{color:var(--gold);flex:none;font-size:14px;line-height:1.5;margin-top:1px}
+@media(max-width:900px){.tldr ul{grid-template-columns:1fr;gap:14px}}
+
+/* sections */
+.sec{margin:0 0 44px}
+.sec-head{display:flex;gap:18px;align-items:baseline;margin:0 0 16px;
+  padding-bottom:14px;border-bottom:1px solid var(--line-soft)}
+.sec-idx{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--gold);
+  border:1px solid var(--line);border-radius:8px;padding:5px 10px;flex:none;letter-spacing:.04em;
+  background:rgba(231,178,76,.06)}
+.sec-titles{min-width:0}
+.sec h2{font-family:var(--serif);font-weight:600;color:var(--ink);
+  font-size:clamp(20px,2vw,28px);line-height:1.1;margin:0 0 4px;letter-spacing:-.005em}
+.sec-desc{margin:0;color:var(--ink-3);font-size:14px;max-width:110ch}
+
+/* tables */
+.twrap{overflow:auto;max-height:84vh;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.twrap:focus-visible{outline:2px solid var(--gold);outline-offset:0}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:760px;
+  font-variant-numeric:tabular-nums;font-size:13.5px}
+thead th{position:sticky;top:0;z-index:2;background:var(--surface-2);color:var(--ink);
+  text-align:left;font-weight:600;font-size:12px;letter-spacing:.02em;
+  padding:12px 15px;white-space:nowrap;border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line-soft);box-shadow:0 1px 0 var(--line)}
+thead th:last-child{border-right:0}
+tbody td{padding:11px 15px;vertical-align:top;color:var(--ink-2);line-height:1.5;
+  border-bottom:1px solid var(--line-soft);border-right:1px solid var(--line-soft)}
+tbody td:last-child{border-right:0}
+tbody tr:last-child td{border-bottom:0}
+tbody td:first-child{color:var(--ink);font-weight:600}
+tbody tr:nth-child(even) td{background:rgba(255,255,255,.018)}
+tbody tr:hover td{background:rgba(169,139,255,.07)}
+td.num{text-align:right;color:var(--fig);font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:12.5px}
+
+/* prose */
+.prose{max-width:84ch;margin-top:8px}
+.prose h3{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:clamp(17px,1.5vw,21px);
+  line-height:1.2;margin:30px 0 12px;padding-left:14px;border-left:3px solid var(--gold)}
+.prose h3:first-child{margin-top:6px}
+.prose p{margin:0 0 14px;color:var(--ink-2);font-size:15px;line-height:1.62}
+.prose strong{color:var(--ink);font-weight:650}
+.prose em{color:var(--ink-3);font-style:italic}
+.prose ul.md-ul,.prose ol.md-ol{margin:0 0 16px;padding-left:0;list-style:none}
+.prose ul.md-ul>li,.prose ol.md-ol>li{position:relative;padding-left:30px;margin-bottom:9px;color:var(--ink-2);line-height:1.58}
+.prose ul.md-ul>li::before{content:"\2022";position:absolute;left:8px;top:-1px;color:var(--gold);font-size:16px}
+.prose ol.md-ol{counter-reset:mo}
+.prose ol.md-ol>li{counter-increment:mo}
+.prose ol.md-ol>li::before{content:counter(mo);position:absolute;left:0;top:1px;
+  font-family:var(--mono);font-size:11px;font-weight:600;color:var(--gold);
+  border:1px solid var(--line);border-radius:5px;width:20px;height:20px;display:grid;place-items:center;line-height:1}
+.prose code,.diagram code{font-family:var(--mono);font-size:.86em}
+.prose code{background:rgba(198,180,255,.10);color:var(--violet-2);padding:1px 6px;border-radius:5px;border:1px solid rgba(198,180,255,.14)}
+pre.diagram{overflow-x:auto;background:var(--void-2);border:1px solid var(--line);border-radius:12px;
+  padding:20px 22px;margin:18px 0 22px;max-width:100%}
+pre.diagram code{color:var(--violet-2);font-size:12.5px;line-height:1.55;white-space:pre;background:none;border:0;padding:0}
+.callout{border:1px solid var(--gold);border-radius:12px;background:rgba(231,178,76,.06);
+  padding:16px 20px;margin:22px 0 4px;color:var(--ink);font-size:15px;line-height:1.6}
+.callout strong{color:var(--gold-2)}
+
+/* open questions + sources */
+ol.oq{max-width:104ch;list-style:none;margin:8px 0 0;padding:0;counter-reset:oq}
+ol.oq>li{counter-increment:oq;position:relative;padding:14px 16px 14px 54px;margin-bottom:11px;
+  background:var(--surface);border:1px solid var(--line);border-radius:11px;color:var(--ink-2);font-size:14.5px;line-height:1.55}
+ol.oq>li::before{content:counter(oq,decimal-leading-zero);position:absolute;left:16px;top:14px;
+  font-family:var(--mono);font-size:13px;font-weight:600;color:var(--gold)}
+ol.oq>li strong{color:var(--ink)}
+ol.sources{max-width:120ch;margin:8px 0 0;padding-left:0;list-style:none;counter-reset:src}
+ol.sources>li{counter-increment:src;position:relative;padding-left:34px;margin-bottom:11px;
+  font-family:var(--mono);font-size:12.5px;line-height:1.55;color:var(--ink-3)}
+ol.sources>li::before{content:"[" counter(src) "]";position:absolute;left:0;top:0;color:var(--gold);font-weight:600}
+
+footer{margin-top:44px;padding-top:22px;border-top:1px solid var(--line-soft);
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--ink-3);
+  display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between}
+
+@media(prefers-reduced-motion:reduce){.mast::before{animation:none}}
+@media(max-width:640px){
+  body{font-size:14px}
+  .sec-head{gap:12px}
+  .tldr ul{gap:13px}
+}
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="mast">
+    <p class="eyebrow">Facebook Funnel Teardown<span class="dot">&bull;</span>Business-Model Dossier<span class="dot">&bull;</span>Confidential</p>
+    <h1>Facebook Astrology Funnels: Business-Model Teardown + AI-Kundli Build Blueprint</h1>
+    <p class="sub">6 advertiser pages reverse-engineered end-to-end (ad → quiz → paywall), collapsed to ~6 operators and one repeatable playbook, with the concrete stack to build the automated AI version on the client's existing Stripe.</p>
+    <hr class="rule">
+    <div class="chips"><span class="chip">6 advertiser pages</span><span class="chip">~6 operators</span><span class="chip">1 repeatable playbook</span><span class="chip">WEB Stripe billing · no store cut</span><span class="chip">$0.99–$20 trial → recurring</span></div>
+  </header>
+
+  <section class="tldr" aria-label="Executive summary">
+    <p class="kicker">Executive summary</p>
+    <h2>The brief in eight lines</h2>
+    <ul><li><span class="spark">&#10022;</span><span>Six pages, but only a handful of operators and ONE repeatable playbook: novelty quiz ad -&gt; harvest birth date/time/place -&gt; paywalled 'personalized' reading -&gt; recurring subscription.</span></li><li><span class="spark">&#10022;</span><span>The core trick: everyone bills on a WEB Stripe funnel, NOT an App Store app. No 30% store cut, no store review, full control of price/trial/coupons. This is exactly the client's setup.</span></li><li><span class="spark">&#10022;</span><span>Birth date + EXACT birth time + birth place are the three Kundli inputs. SkyWhisper, Aspectica, Lumius and Futurio all capture them inside a long psychographic quiz that doubles as data harvest and sunk-cost commitment.</span></li><li><span class="spark">&#10022;</span><span>Going rate = a $0.99-$20 'trial' that silently rolls into $14.99/week (SkyWhisper), $39.99/mo (Aspectica) or $69.50/30-days (Lumius, ~$845/yr). Dark patterns: fake countdowns, 93%-off coupons, pay-what-you-want trial, spin-the-wheel discounts.</span></li><li><span class="spark">&#10022;</span><span>Proven creative angles to copy: aura-color, past-life, soulmate-sketch, 'your chart knows why the same people keep changing your life', future-husband, cosmic-IQ, palmistry 'how many kids', witch-type.</span></li><li><span class="spark">&#10022;</span><span>Recommended build: VedAstro (MIT-licensed, free/$1/mo, native MCP) computes the chart -&gt; Claude Haiku writes the reading -&gt; client's existing Stripe bills it. Chart cost ~$0, LLM cost a few cents per reading.</span></li><li><span class="spark">&#10022;</span><span>Client's existing tools slot in cleanly: veo-flow-multi mass-produces the hook creatives per angle/language; vantage + Gonzo isolate the FB ad accounts against the near-certain bans.</span></li><li><span class="spark">&#10022;</span><span>Real risk is operational, not technical: ad-account bans, chargeback/refund exposure from trial-auto-renew (HitMeal is 2.0 on Trustpilot despite 4.66 in-store), and thin offshore-shell reputation.</span></li></ul>
+  </section>
+
+  <section class="sec">
+  <header class="sec-head">
+    <span class="sec-idx">&sect;01</span>
+    <div class="sec-titles">
+      <h2>Advertiser comparison</h2>
+      <p class="sec-desc">Six advertiser Pages traced end to end — followers, ad volume, destination, funnel type and headline price.</p>
+    </div>
+  </header>
+  <div class="twrap" tabindex="0" role="region" aria-label="data table"><table><thead><tr><th scope="col">Page</th><th scope="col">Category</th><th scope="col">Likes</th><th scope="col">Active ads</th><th scope="col">Library size</th><th scope="col">Main hook angles</th><th scope="col">Destination</th><th scope="col">Product / operator</th><th scope="col">Funnel type</th><th scope="col">Monetization</th><th scope="col">Headline price</th></tr></thead><tbody><tr><td>Natal Chart &amp; Aura Reading</td><td>Entertainment / Psychic</td><td class="num">41</td><td>4</td><td>~18</td><td>aura-color, past-life</td><td>skywhisper.app</td><td>SkyWhisper (FTM IT OÜ, Estonia)</td><td>Quiz -&gt; reading tease -&gt; email -&gt; fake-discount -&gt; Stripe paywall</td><td>Trial-to-sub</td><td>$0.99 for 7-day trial, then $14.99/week</td></tr><tr><td>Wildly Rooted</td><td>Health Service</td><td class="num">1,480</td><td>34</td><td>~92</td><td>healer-archetype, natal-asteroids, plant-channeling, healer-community</td><td>wildlyrooted.com / skool.com</td><td>BLOOM community + mini-courses (Venessa Rodriguez, PMA)</td><td>Quiz/advertorial -&gt; Skool community or ThriveCart course</td><td>Trial-to-sub + one-time</td><td>$11/mo (7-day free trial); courses $22-$33 one-time</td></tr><tr><td>Aspectica</td><td>Psychic</td><td class="num">70</td><td>17 (of top 421)</td><td>~4,000</td><td>cosmic-iq, empath-type, soul-age, numerology, starseed</td><td>my.aspectica-app.com / sentie-app.com</td><td>Aspectica 'Cosmic IQ' (CM MentalGrowth Ltd, Cyprus)</td><td>High-volume DCO quiz -&gt; score tease -&gt; email -&gt; paywall</td><td>Trial-to-sub</td><td>$0.99 for 3-day trial, then $39.99/mo</td></tr><tr><td>Maya Carter (ex 'Tina Moss')</td><td>Health/beauty</td><td class="num">3</td><td>10</td><td>~320</td><td>soulmate-sketch, ex-back (hist. weight-loss)</td><td>quiz.futurio.app / quizz.hitmeal.app</td><td>Futurio 'Soulmate Sketch' (AIBY Inc., US)</td><td>Quiz -&gt; soulmate-sketch tease -&gt; email -&gt; spin-wheel -&gt; paywall</td><td>Intro-discount sub</td><td>1wk $6.93 / 4wk $15.19 / 12wk $25.99, renews $17.77-$66.65</td></tr><tr><td>Lumius</td><td>Product/service</td><td class="num">77</td><td>20</td><td>~2,200</td><td>natal-chart, emotional-patterns, burnout, overthinking</td><td>lumius.org</td><td>Lumius natal-chart + palmistry (PMC Baltic FZ-LLC, UAE)</td><td>Quiz -&gt; natal+palm tease -&gt; email -&gt; pay-what-you-want trial paywall</td><td>Trial-to-sub</td><td>$6-$20.82 for 7-day trial, then $69.50/30 days</td></tr><tr><td>Center for Astrological Studies</td><td>Product/service</td><td class="num">77</td><td>26</td><td>~1,300</td><td>natal-chart (future-husband), witch-type, burnout, palmistry</td><td>lumius.org (15 langs) / nocturnum.co</td><td>Lumius (same app) + Nocturnum witch quiz (PMC Baltic)</td><td>Quiz -&gt; natal+palm/witch tease -&gt; email -&gt; paywall</td><td>Trial-to-sub</td><td>$6-$20.82 (EUR 5-17.67) trial, then $69.50 / EUR 59 per 30 days</td></tr></tbody></table></div>
+</section><section class="sec">
+  <header class="sec-head">
+    <span class="sec-idx">&sect;02</span>
+    <div class="sec-titles">
+      <h2>Winning ad hooks to copy</h2>
+      <p class="sec-desc">The scroll-stopping angles worth cloning, and exactly why each one stops the thumb.</p>
+    </div>
+  </header>
+  <div class="twrap" tabindex="0" role="region" aria-label="data table"><table><thead><tr><th scope="col">Hook angle</th><th scope="col">Example ad copy</th><th scope="col">Media style</th><th scope="col">Reach (pages / ads)</th><th scope="col">Why it scroll-stops</th></tr></thead><tbody><tr><td>natal-chart relationship-pattern</td><td>'Your chart knows why the same people keep changing your life. The attraction. The chaos. The emotional deja vu.'</td><td>Moody cinematic B-roll video or natal-wheel graphic; 15 languages</td><td>2 pages (p5+p6), ~52 ads — the single most-scaled angle</td><td>Names a felt pain (repeating toxic relationships) and promises to finally 'see yourself clearly'</td></tr><tr><td>soulmate-sketch</td><td>'What does your soulmate actually look like? We can draw his face using only your birthdate.'</td><td>Mystical AI pencil-sketch reveal video</td><td>1 page (p4), flagship — 29 ad IDs / ~252 collation</td><td>Promises a concrete visual payoff (an actual face) — irresistible 'I have to see it'</td></tr><tr><td>cosmic-iq / starseed</td><td>'Your Cosmic IQ reveals which race your soul belongs to. Only souls from other planets got a high score.'</td><td>Deep-space starfield, neon score ladders (ADHD-&gt;Exceptional)</td><td>1 page (p3), dominant — ~293 ads</td><td>Test/score gamification + specialness flattery ('you're rare / awakening')</td></tr><tr><td>future-husband</td><td>'Your future husband's name is already hidden in your birth chart.'</td><td>Freckled decolletage + tiny male-profile tattoo + zodiac wheel + 'Take the Test'</td><td>1 page (p6), many geos</td><td>Romance-destiny intrigue with a clothed-but-sensual visual; strong female-target curiosity</td></tr><tr><td>aura-color</td><td>'What does your aura color say about your personality? If your aura is BLUE, you are an empath in disguise.'</td><td>Glowing colored orb/spiral on black + bold white overlay</td><td>1 page (p1), 13 ads (+ Aspectica aura variant)</td><td>Color = instant self-identification; 'which color am I?' curiosity gap</td></tr><tr><td>past-life</td><td>'Some souls have lived 12 times. Yours?' / 'Who Were You?'</td><td>Sepia parchment vintage engraving; 5-second videos</td><td>1 page (p1), 5 ads</td><td>Mystery + flattery of a dramatic prior life; reincarnation curiosity</td></tr><tr><td>empath-type / typology</td><td>'How rare is your EXACT empath type? Only 4% have the rarest trait.' Sponge / Mirror / Shield / Seer</td><td>Sepia engraving 4-panel quadrant card</td><td>1 page (p3), recurring cluster</td><td>Rarity claim + pick-your-quadrant identity quiz bait</td></tr><tr><td>soul-age (fake-UI)</td><td>'Stop reading your 12 houses. Your entire chart calculates one metric: Soul Age.' (fake Notes + '[object Object]' glitch)</td><td>Fake iPhone-Notes screenshot with a deliberate data-error tap-bait</td><td>1 page (p3)</td><td>Fake glitch/redaction tap-bait + false authority (looks like a real computation)</td></tr><tr><td>palmistry</td><td>'How many children will you have?' animated palm scan</td><td>Close-up open palm with animated lines/sparkles</td><td>2 pages (p5+p6)</td><td>Body-based + a concrete life question (kids); interactive-feeling tease</td></tr><tr><td>witch-type</td><td>'What type of witch are you?' Supreme / Blood / Green / Cosmic</td><td>Aged-parchment pentagram wheel, hooded-witch fantasy art</td><td>1 page (p6), Nocturnum — 8 ads</td><td>Fantasy-aesthetic identity typology; strong for the mystic/pagan audience</td></tr><tr><td>angel-numbers / numerology</td><td>'22:22 contains a hidden message from the universe. 99% will miss it.'</td><td>Cosmic nebula / master-number tarot cards</td><td>1 page (p3)</td><td>Pattern-seeing (people already notice repeating numbers) + secret-knowledge lure</td></tr><tr><td>healer-archetype / natal-asteroids</td><td>'I spent a decade and $$$ figuring out my gifts as a healer — then found them in my birth chart in under an hour.'</td><td>UGC founder selfie talking-head</td><td>1 page (p2), largest cluster (31/70 ads)</td><td>Pain-to-relief personal story: 'the answer was in you all along'</td></tr><tr><td>burnout / overthinking advertorial</td><td>Long first-person 'how I went from anxious wreck to calm' story that pivots to a free 'cosmic archetype' quiz</td><td>Lifestyle photo of a calm woman, no product, no overlay</td><td>2 pages (p5+p6), 6 ads</td><td>Native/organic look, low ad-feel, high read-through then soft CTA</td></tr></tbody></table></div>
+</section><section class="sec">
+  <header class="sec-head">
+    <span class="sec-idx">&sect;03</span>
+    <div class="sec-titles">
+      <h2>Funnel breakdown</h2>
+      <p class="sec-desc">Every step from ad to Stripe paywall, with the three Kundli inputs flagged in each capture.</p>
+    </div>
+  </header>
+  <div class="twrap" tabindex="0" role="region" aria-label="data table"><table><thead><tr><th scope="col">Product</th><th scope="col">Ordered funnel steps</th><th scope="col">Data collected (Kundli inputs flagged)</th><th scope="col">Monetization</th><th scope="col">Price ladder</th><th scope="col">Trial terms</th><th scope="col">Payment processor</th><th scope="col">Tech-stack signals</th></tr></thead><tbody><tr><td>SkyWhisper (aura / past-life)</td><td>Landing -&gt; gender -&gt; ~24-35 psychographic Qs -&gt; DOB wheel -&gt; birth time (+ 'I dont know') -&gt; birth place (Mapbox) -&gt; loaders + mid-loader upsell toggles -&gt; email -&gt; promo-code (93% off) -&gt; Stripe paywall</td><td>gender; BIRTH DATE; BIRTH TIME; BIRTH PLACE (all 3 Kundli inputs); email; 24-35 quiz answers. No name/phone; uid = base64(email)</td><td>Trial-to-sub</td><td>$0.99 today (7-day trial) -&gt; $14.99/week auto-renew</td><td>$0.99/$1 for 7-day trial, auto-renews weekly; fake 14:55 countdown; coupon SKYWHISPER93; one Stripe variant charged $1.05</td><td>Stripe (Payment Element + Google Pay), hCaptcha</td><td>Next.js/Vercel, Firebase auth, Cloud Run backend, Mapbox geocode, Amplitude, Sentry, Meta+Snap+Tapad pixels</td></tr><tr><td>Aspectica 'Cosmic IQ'</td><td>Landing /csmc_iq -&gt; gender -&gt; astro level -&gt; 5 IQ pattern Qs -&gt; ~10 psychographic Qs -&gt; DOB -&gt; birth time -&gt; birth place -&gt; loader -&gt; email (sign_up) -&gt; paywall</td><td>gender; astro familiarity; BIRTH DATE; BIRTH TIME; BIRTH PLACE (Kundli inputs); email; ~15-20 answers. No name/phone</td><td>Trial-to-sub</td><td>$0.99 (3-day trial) -&gt; $39.99/mo (some sessions EUR 0.99 -&gt; EUR 39.99)</td><td>$0.99 for 3-day trial (promo Spring_90, 90% off $9.99), auto-renews $39.99/mo, 30-day money-back</td><td>Stripe (Payment Element + Google Pay), hCaptcha; FunnelFox declares Primer/Paddle/PayPal/Solidgate but only Stripe live</td><td>FunnelFox (SvelteKit) on Cloudflare, mentalgrowth.app backend, Meta/TikTok/Pinterest/GA4 pixels</td></tr><tr><td>Futurio 'Soulmate Sketch' / ex-back</td><td>Landing -&gt; own gender -&gt; soulmate gender pref -&gt; age range -&gt; ethnicity -&gt; ~23 psychographic Qs -&gt; DOB -&gt; name -&gt; zodiac interstitial -&gt; birth time (opt) -&gt; birth place (opt) -&gt; 'portrait ready' loader -&gt; email -&gt; rigged spin-wheel (-61%) -&gt; 3-tier paywall -&gt; post-purchase upsells</td><td>own gender; soulmate gender/age/ethnicity pref; BIRTH DATE + name; BIRTH TIME (optional); BIRTH PLACE (optional, skippable) (Kundli, partial); email; ~23 answers</td><td>Intro-discount subscription (no free trial)</td><td>1wk $6.93 / 4wk $15.19 (default) / 12wk $25.99 -&gt; renews $17.77 / $38.95 / $66.65; + Tarot+Numerology sub upsell + one-time guides</td><td>No free trial; discounted first term auto-renews at full price; 10-min countdown + fake purchase ticker; spin-wheel always lands -61%</td><td>Stripe (pk_live) + Google Pay; Solidgate + PayPal wired as alternates</td><td>FunnelFox/SvelteKit, Amplitude, Hotjar, Meta/TikTok/Pinterest/Google Ads pixels; Nepenthes anti-bot tarpit</td></tr><tr><td>Lumius (natal + palmistry)</td><td>Gender -&gt; name -&gt; ~18-24 psychographic Qs -&gt; DOB wheel -&gt; birth-time-known toggle -&gt; birth time -&gt; birth city (autocomplete-&gt;geocode) -&gt; optional left-palm photo (skippable) -&gt; email + consent -&gt; loaders/reveal -&gt; 'choose your trial price' paywall -&gt; Stripe checkout</td><td>gender; name; BIRTH DATE; BIRTH TIME; BIRTH PLACE geocoded to lat/lon/timezone (all Kundli inputs); optional palm photo (palmistry); email; ~18-24 answers</td><td>Trial-to-sub (pay-what-you-want trial)</td><td>$6/$11/$15/$20.82 (7-day trial) -&gt; $69.50/30 days. Localized: EUR 5-17.67 -&gt; 59; DKK 37-131.87 -&gt; 440.32; CZK 121-428.07 -&gt; 1,429.33</td><td>Pay-what-you-want trial (highest pre-selected as 'true cost'), auto-renews fixed monthly; 10-min countdown; struck anchor; 30-day money-back; fake 'as seen in' logo wall</td><td>Stripe only (pk_live 'dahlia'); 'paypal' string present but not wired</td><td>Bespoke Next.js/Vercel, Supabase (funnel_events), PostHog EU, Meta Pixel, Google Maps/Places geocode, MediaPipe hand_landmarker (on-device palm scan)</td></tr><tr><td>Wildly Rooted / BLOOM (non-app coach)</td><td>FB ad -&gt; Squarespace quiz-page (Interact 9-Q archetype quiz) -&gt; name+email gate -&gt; archetype reveal -&gt; CTA -&gt; Skool /about -&gt; plan selector -&gt; Skool signup + email OTP -&gt; Stripe. Or advertorial -&gt; ThriveCart course checkout</td><td>first name + email ONLY. No birth data — 'healer archetype' derived from 9 psychographic answers</td><td>Trial-to-sub (Skool) + one-time (courses)</td><td>BLOOM Standard $11/mo, Premium $55/mo (7-day free trial); Witch Wound course $33 (reg $147); Plant Portal $22; +$17 order bump</td><td>7-day free trial on Skool community; courses one-time, no trial</td><td>Stripe via Skool (Stripe Connect) + ThriveCart/Stripe + PayPal + Google Pay</td><td>Squarespace, Interact quiz, Skool, ThriveCart, Deadline Funnel, WiserNotify, Privy, Meta Pixel + CAPI</td></tr><tr><td>Sentie / HitMeal (non-Kundli siblings)</td><td>Same quiz-to-paywall shape but harvests wellbeing or body metrics instead of birth data (shown here as the reusable template beyond astrology)</td><td>Sentie: gender/age/~30 wellbeing answers + email. HitMeal: age/sex/height/weight/goal + email. NO birth date/time/place</td><td>Trial-to-sub / intro-to-sub</td><td>Sentie 7d $10.50 / 1mo $19.99 / 3mo $34.99 -&gt; $49.99-$99.99. HitMeal 1wk $4.99 / 4wk $14.99 / 12wk $29.99 -&gt; $9.99-$59.99</td><td>Discounted intro auto-renews; 50%-off spin-wheel + countdown</td><td>Sentie: Stripe (CY). HitMeal: Primer orchestration -&gt; Stripe + Solidgate + Paddle</td><td>FunnelFox/SvelteKit, same operator stacks; proves the template reskins to any vertical</td></tr></tbody></table></div>
+</section><section class="sec">
+  <header class="sec-head">
+    <span class="sec-idx">&sect;04</span>
+    <div class="sec-titles">
+      <h2>Pricing across products</h2>
+      <p class="sec-desc">Full price ladders and trial mechanics, side by side across all products and currencies.</p>
+    </div>
+  </header>
+  <div class="twrap" tabindex="0" role="region" aria-label="data table"><table><thead><tr><th scope="col">Product</th><th scope="col">Plan / tier</th><th scope="col">Price</th><th scope="col">Currency</th><th scope="col">Billing</th><th scope="col">Notes</th></tr></thead><tbody><tr><td>SkyWhisper</td><td>Aura/Past-Life intro trial</td><td class="num">0.99</td><td>USD</td><td>One-time, 7-day trial</td><td>93%-off coupon SKYWHISPER93; one Stripe session charged 1.05</td></tr><tr><td>SkyWhisper</td><td>Subscription after trial</td><td class="num">14.99</td><td>USD</td><td>Per week, auto-renew</td><td>~$780/yr if retained</td></tr><tr><td>Aspectica</td><td>Cosmic IQ trial</td><td class="num">0.99</td><td>USD / EUR</td><td>One-time, 3-day trial</td><td>Promo Spring_90, 90% off list 9.99</td></tr><tr><td>Aspectica</td><td>Cosmic IQ subscription</td><td class="num">39.99</td><td>USD / EUR</td><td>Per month, auto-renew</td><td>30-day money-back guarantee</td></tr><tr><td>Aspectica (invisible_self)</td><td>1-month plan</td><td class="num">19.99 today</td><td>USD</td><td>Per month</td><td>Renews at full 44.79</td></tr><tr><td>Aspectica (invisible_self)</td><td>12-month plan</td><td class="num">26.54 today</td><td>USD</td><td>Per 12 months</td><td>-80% anchor 132.79; renewal figure is a template bug</td></tr><tr><td>Sentie</td><td>1-month (most popular)</td><td class="num">19.99 intro</td><td>USD</td><td>Then 49.99/mo</td><td>Also 7-day 10.50 and 3-month 34.99 tiers</td></tr><tr><td>Futurio</td><td>1-week</td><td class="num">6.93 intro</td><td>USD</td><td>Weekly, renews 17.77</td><td>$0.99/day framing</td></tr><tr><td>Futurio</td><td>4-week (most popular, default)</td><td class="num">15.19 intro</td><td>USD</td><td>Per 4 weeks, renews 38.95</td><td>$0.49/day framing</td></tr><tr><td>Futurio</td><td>12-week</td><td class="num">25.99 intro</td><td>USD</td><td>Per 12 weeks, renews 66.65</td><td>$0.29/day framing</td></tr><tr><td>Futurio</td><td>Tarot / Tarot+Numerology upsell</td><td class="num">3.99-24.99</td><td>USD</td><td>Recurring (matches main cadence)</td><td>50% off post-purchase upsell</td></tr><tr><td>Futurio</td><td>Cosmic Forecast + Palmistry guides</td><td class="num">14.99-19.99</td><td>USD</td><td>One-time</td><td>Post-purchase add-on</td></tr><tr><td>HitMeal</td><td>1wk / 4wk / 12wk</td><td class="num">4.99 / 14.99 / 29.99 intro</td><td>USD</td><td>Then 9.99 / 29.99 / 59.99</td><td>50%-off spin-wheel; iOS device required</td></tr><tr><td>Lumius (US)</td><td>7-day trial (pay-what-you-want)</td><td class="num">6.00-20.82</td><td>USD</td><td>One-time, 7-day</td><td>20.82 pre-selected as 'true cost'</td></tr><tr><td>Lumius (US)</td><td>Subscription</td><td class="num">69.50</td><td>USD</td><td>Per 30 days</td><td>~$845/yr; descriptor 'LUMIUS'</td></tr><tr><td>Lumius (EU)</td><td>7-day trial / subscription</td><td class="num">5-17.67 / 59.00</td><td>EUR</td><td>One-time / per 30 days</td><td>BG + GR localizations</td></tr><tr><td>Lumius (DK)</td><td>7-day trial / subscription</td><td class="num">37-131.87 / 440.32</td><td>DKK</td><td>One-time / per 30 days</td><td>Danish localization</td></tr><tr><td>Lumius (CZ)</td><td>7-day trial / subscription</td><td class="num">121-428.07 / 1,429.33</td><td>CZK</td><td>One-time / per 30 days</td><td>Czech localization</td></tr><tr><td>Wildly Rooted</td><td>BLOOM Standard</td><td class="num">11.00</td><td>USD</td><td>Per month, 7-day free trial</td><td>Was $44/mo in older creatives</td></tr><tr><td>Wildly Rooted</td><td>BLOOM Premium</td><td class="num">55.00</td><td>USD</td><td>Per month</td><td>+ $1,500 course vault, live calls</td></tr><tr><td>Wildly Rooted</td><td>Witch Wound course</td><td class="num">33.00</td><td>USD</td><td>One-time</td><td>Reg $147; +$17 'Safe to Shine' bump</td></tr><tr><td>Wildly Rooted</td><td>Plant Portal course</td><td class="num">22.00</td><td>USD</td><td>One-time</td><td>Value-stacked ~$292; +$17 bump</td></tr></tbody></table></div>
+</section><section class="sec">
+  <header class="sec-head">
+    <span class="sec-idx">&sect;05</span>
+    <div class="sec-titles">
+      <h2>Who runs them / diligence</h2>
+      <p class="sec-desc">Legal entities, jurisdictions, hosting fingerprints and the shared-operator clusters behind the pages.</p>
+    </div>
+  </header>
+  <div class="twrap" tabindex="0" role="region" aria-label="data table"><table><thead><tr><th scope="col">Product</th><th scope="col">Legal entity / publisher</th><th scope="col">Jurisdiction</th><th scope="col">Hosting / registrar</th><th scope="col">Shared-operator cluster</th><th scope="col">Reputation</th><th scope="col">Notable complaints</th></tr></thead><tbody><tr><td>SkyWhisper</td><td>FTM IT OU (reg 17181632, incorporated 20 Feb 2025)</td><td>Estonia (EU)</td><td>GoDaddy + Vercel; Firebase auth</td><td>GoDaddy+Vercel 'playbook family' (shares Vercel edge 216.198.79.1 with Nocturnum)</td><td>No app listing (web-only); ScamAdviser 'likely safe' but too new to judge</td><td>None yet — brand-new shell; structural trial-to-sub risk (AI-generic readings, recurring charge)</td></tr><tr><td>Wildly Rooted / BLOOM</td><td>No company — 'Sovereign Spirit Sanctuary' PMA (Venessa Rodriguez)</td><td>USA (Private Ministerial Association, outside normal corp/consumer regulation)</td><td>Name.com + Squarespace</td><td>Separate — NOT part of the app-funnel operators</td><td>Legit small creator; well-reviewed 'Feed Your Wild' podcast</td><td>None; only Deadline-Funnel countdown scarcity</td></tr><tr><td>Aspectica / Sentie</td><td>CM MentalGrowth Ltd (Nicosia)</td><td>Cyprus (EU)</td><td>Amazon Registrar + Route53 + CloudFront</td><td>CONFIRMED cluster: Aspectica + Sentie + mentalgrowth (shared CloudFront edge 143.204.55.20); ~7-app store portfolio</td><td>aspectica-app.com ScamAdviser 0/100 'likely unsafe' (new, hidden WHOIS); sentie-app.com 0/100 'probably legit'</td><td>IQ/brain-training category: undisclosed recurring charge, hard cancel, bank chargebacks</td></tr><tr><td>Futurio / HitMeal</td><td>AIBY Inc. (AIBY Group)</td><td>USA (Florida) — multi-entity group</td><td>Cloudflare (shared NS rita/elliott = same account)</td><td>CONFIRMED: Futurio + HitMeal one Cloudflare account; ~33-app publisher, 2B+ downloads</td><td>Futurio App Store 4.7 (~33k); HitMeal 4.66 (~46k) BUT HitMeal Trustpilot 2.0 (86% 1-star), ScamAdviser 0/100</td><td>Soulmate Sketch paid-not-delivered; charged-after-cancel; trial auto-converts; sub not where app says to cancel</td></tr><tr><td>Lumius / Nocturnum</td><td>'PMC Baltic' FZ-LLC (reg 45001684, self-asserted)</td><td>UAE (Ras Al Khaimah free zone — offshore, opaque, not publicly searchable)</td><td>GoDaddy + Vercel; Supabase + PostHog</td><td>CONFIRMED: lumius.org + lumius-app.com registered 4 seconds apart, same NS + Vercel IP; runs Nocturnum + 15 locale skins off one app</td><td>No app listing; no Trustpilot; ScamAdviser CAPTCHA-gated</td><td>None surfaced yet; category pattern = trial-&gt;sub, generic AI readings, cancel friction, disputed charges</td></tr></tbody></table></div>
+</section><section class="sec">
+  <header class="sec-head">
+    <span class="sec-idx">&sect;06</span>
+    <div class="sec-titles">
+      <h2>Kundli / Astrology APIs to power the AI</h2>
+      <p class="sec-desc">Chart engines that can compute the real Kundli/natal data feeding the AI reading — with license and LLM-readiness.</p>
+    </div>
+  </header>
+  <div class="twrap" tabindex="0" role="region" aria-label="data table"><table><thead><tr><th scope="col">API</th><th scope="col">Type</th><th scope="col">Pricing</th><th scope="col">System</th><th scope="col">What it computes</th><th scope="col">Inputs</th><th scope="col">Output format</th><th scope="col">LLM-ready?</th><th scope="col">License</th></tr></thead><tbody><tr><td>VedAstro</td><td>Open-source library + freemium API + MCP</td><td>Free ('FreeAPIUser' key, ~5 req/min, no signup); paid from $1/mo</td><td>Vedic/Kundli (sidereal, 47 ayanamsa)</td><td>Full Kundli: D1-D60 charts, planets, nakshatras, Vimshottari dashas, guna-milan, yogas, panchang, houses; 596+ methods / 200+ endpoints</td><td>DOB, exact time, lat/long OR place name (has geo lookup)</td><td>JSON / Python dicts + SVG charts</td><td>Excellent — clean JSON + first native Vedic MCP server (Claude tool-calls charts directly)</td><td>MIT (safe for closed commercial SaaS; Swiss Ephemeris inside)</td></tr><tr><td>Kerykeion + Astrologer API</td><td>OSS library (AGPL-3.0) + paid hosted API (RapidAPI)</td><td>Library free; API Pro $9/mo (5k), Ultra $18 (50k), Mega $40 (1M)</td><td>Both, Western-first (sidereal optional via ayanamsa)</td><td>Natal, synastry, transits, composite, returns; NO native dashas / divisional charts / guna-milan</td><td>DOB, exact time, lat/long + timezone (no geocoding)</td><td>Pydantic JSON, SVG, text, and 'AI Context XML' for LLM prompts</td><td>Very good — dedicated AI-context XML endpoints</td><td>AGPL-3.0 library (use hosted API to avoid network copyleft)</td></tr><tr><td>Swiss Ephemeris / pyswisseph</td><td>OSS calculation engine (used inside all the others)</td><td>Free (AGPL) or one-off paid pro license</td><td>Both (raw)</td><td>Raw astronomy: planet/star positions, Ascendant, house cusps, sidereal w/ any ayanamsa; NOT a Kundli product</td><td>Julian day (DOB + UTC time) + lat/long/alt; you handle tz/geo</td><td>Bare numeric arrays/floats</td><td>Low — outputs numbers only; you must build the labeled-JSON layer</td><td>Dual: AGPL-3.0 or paid Swiss Ephemeris pro license</td></tr><tr><td>Prokerala</td><td>Freemium API (closed-source, since 2006)</td><td>Free 5,000 credits/mo; Ruby $19/mo (100k), Emerald $49 (350k), Sapphire $99 (1M)</td><td>Both, Vedic-led</td><td>Kundli, Mangal + other doshas, Vimshottari dashas, yogas, Ashtakavarga, panchang, guna-milan, KP, Western, numerology, PDF</td><td>DOB, exact time, place / lat-long</td><td>JSON + PDF reports</td><td>Good — rich structured JSON per component; no MCP; credit-per-endpoint cost</td><td>Proprietary SaaS</td></tr><tr><td>FreeAstrologyAPI.com</td><td>Freemium API (generous free tier)</td><td>Free 50 req/day; Mercury $15/mo (50k), Venus $40 (200k), Saturn $75 (500k)</td><td>Both (strong Indian Vedic + Western)</td><td>Kundli (N/S styles), planets, nakshatras, dashas, divisional charts, full panchang, matchmaking</td><td>DOB, exact time, lat/long + timezone</td><td>JSON + SVG charts</td><td>Good — clean JSON, predictable flat quota; no built-in AI/MCP</td><td>Proprietary SaaS</td></tr><tr><td>AstrologyAPI.com (Vedic Rishi)</td><td>Freemium / credit-based API (closed-source)</td><td>50 free credits; ~$12 per 10k credits; Indian suite from ~$18/mo</td><td>Both — one of the widest catalogs</td><td>300+ endpoints: kundli, panchang, muhurta, guna-milan, KP, Lal Kitab, dashas, numerology, horoscope feeds + interpretation text</td><td>DOB, exact time, lat/long + tz (free geo-details endpoint)</td><td>JSON + pre-written interpretation text + PDF</td><td>Good-strong — JSON + text, and a hosted MCP server</td><td>Proprietary SaaS</td></tr><tr><td>Divine API</td><td>Paid API with 14-day free trial (closed-source)</td><td>Vedic 'Sampoorna' $19/mo (100k); Ananta $79 (600k); Western Nova $39 (1M)</td><td>Both (Vedic incl. KP + Jaimini; deep Western)</td><td>300+ endpoints: full Kundali, matching, panchang, doshas, all dashas, KP, Jaimini, Western progressions/composite, numerology, tarot, PDF</td><td>DOB, exact time, global city / lat-long</td><td>JSON (25 languages) + widgets/CMS plugins + PDF</td><td>Good — multilingual structured JSON; product-siloed billing</td><td>Proprietary SaaS</td></tr><tr><td>VedicAstroAPI</td><td>Freemium / paid API + AI Chat (closed-source)</td><td>14-day trial; Vedic Limited ~$18/mo (30k calls) up to 18M calls; AI Chat ~1 rupee/credit</td><td>Both, Vedic-led + Tarot</td><td>100+ Vedic endpoints: kundli, guna-milan, panchang, dashas, divisional charts, KP; ships self-hosted MCP + beta AI Chat</td><td>DOB, exact time, place / lat-long</td><td>JSON + PDF (21 languages)</td><td>Strong for productized readings — 21-lang JSON, AI Chat + MCP (AI chat beta)</td><td>Proprietary SaaS</td></tr><tr><td>RoxyAPI</td><td>Paid API, flat per-request (closed-source)</td><td>No free production tier; $39/mo (25k), $149 (200k), $349 (750k), $699 (3M)</td><td>Both + many divination extras</td><td>10 domains: Vedic (kundli/panchang/dosha/matching), Western, numerology, tarot, biorhythm, I-Ching, angel numbers; 828+ tests vs JPL DE441</td><td>DOB, exact time, lat/long / place</td><td>JSON; 10 remote MCP servers</td><td>Good — flat-rate JSON + broad MCP; higher floor cost</td><td>Proprietary SaaS</td></tr><tr><td>Vedika API</td><td>Freemium / paid API, AI-first (closed-source)</td><td>Free sandbox (mock only); $12/mo (100/day), $60 (1k/day), $120 (5k/day), $240 (unlimited)</td><td>Vedic-led incl. KP</td><td>140+ endpoints: KP, kundli, dashas, panchang, matchmaking, Vastu; built-in anti-hallucination NLP, 30-lang output</td><td>DOB, exact time, place / lat-long</td><td>JSON + chart-grounded natural-language Q&amp;A</td><td>Strong on paper — built-in grounded NLP; but newest/least-proven, sandbox is mock-only</td><td>Proprietary SaaS</td></tr><tr><td>Kundli.Click</td><td>Freemium API (India-focused)</td><td>Free ~1,000 req/mo; paid ~1,499-2,999 rupees/mo (unverified)</td><td>Vedic/Kundli</td><td>Kundli, predictions, matchmaking, panchang (narrow endpoint set)</td><td>DOB, exact time, place / lat-long</td><td>JSON</td><td>Usable JSON but limited breadth / less-verified reliability — fallback only</td><td>Proprietary SaaS</td></tr><tr><td>Astro-Seek / astro.com</td><td>Consumer website — NO public developer API</td><td>Free on-site; not usable as a backend</td><td>Both</td><td>Full free consumer birth-chart/kundli/synastry calculators (Astrodienst)</td><td>DOB, exact time, place (web form)</td><td>HTML / rendered chart images only</td><td>Bad for automation — no API, scraping violates ToS, output not structured</td><td>Consumer ToS (scraping prohibited)</td></tr></tbody></table></div>
+</section><section class="sec">
+  <header class="sec-head">
+    <span class="sec-idx">&sect;07</span>
+    <div class="sec-titles">
+      <h2>Recommended build stack</h2>
+      <p class="sec-desc">The concrete tools to build the client&#x27;s automated version on his existing Stripe — component by component, with cost.</p>
+    </div>
+  </header>
+  <div class="twrap" tabindex="0" role="region" aria-label="data table"><table><thead><tr><th scope="col">Component</th><th scope="col">Chosen tool / API</th><th scope="col">Role</th><th scope="col">Approx cost</th></tr></thead><tbody><tr><td>Ad creative factory</td><td>veo-flow-multi (Veo/Flow driver) + static graphic templates</td><td>Batch-produce the proven hook variations (aura orbs, palm scans, natal wheels, soulmate-sketch reveals, advertorials) per angle x language</td><td>Existing tool; ~pennies of gen compute per creative</td></tr><tr><td>Ad-account isolation</td><td>vantage fingerprint browser + Gonzo residential proxies</td><td>Run/warm isolated FB ad accounts — one fingerprint + matched proxy each — to survive the near-certain bans</td><td>Existing tools; proxy billed per GB</td></tr><tr><td>Quiz landing page</td><td>FunnelFox (fast path) OR bespoke Next.js on Vercel (Lumius pattern, full control)</td><td>Mobile quiz: psychographic Qs + DOB/time/place capture + email gate + paywall + A/B</td><td>FunnelFox SaaS ~$/mo, or Vercel free-$20/mo self-host</td></tr><tr><td>Geocoding (birth place)</td><td>Google Maps/Places or Mapbox</td><td>City autocomplete -&gt; lat/long/timezone, the exact input the chart engine needs</td><td>~$ per 1k lookups (both have free tiers)</td></tr><tr><td>Chart engine (Kundli)</td><td>VedAstro API/MCP (start), graduate to Prokerala $19/mo or FreeAstrologyAPI $15/mo for SLA</td><td>Compute the full natal/Kundli JSON (planets, houses, nakshatras, dashas) from DOB+time+place</td><td>$0-$1/mo to start; ~$15-$45/mo at scale</td></tr><tr><td>Reading generator</td><td>Claude — Haiku for volume, Sonnet for premium tone</td><td>Turn chart JSON -&gt; personalized, brand-voice prose reading; optionally MCP tool-calls VedAstro directly</td><td>~$0.001-$0.03 per reading</td></tr><tr><td>Billing / paywall</td><td>Stripe (client already has it): Payment Element + Billing subscriptions + Google/Apple Pay + coupons</td><td>$0.99-$20 trial -&gt; weekly/monthly auto-renew; the whole monetization layer, on WEB (no store cut)</td><td>Stripe 2.9% + 30c per charge</td></tr><tr><td>Bot-gate / fraud</td><td>hCaptcha at checkout + Stripe Radar</td><td>Block bots on the pay step; reduce chargeback ratio</td><td>Free-low</td></tr><tr><td>Analytics / attribution</td><td>Amplitude or PostHog + Meta Pixel + Conversions API (+ TikTok/Snap)</td><td>Funnel A/B, conversion events, server-side ad attribution for ROAS</td><td>Free tiers -&gt; $/mo</td></tr><tr><td>Email retention / upsells</td><td>ESP (Klaviyo / Customer.io) + Stripe webhooks</td><td>Deliver the reading, dunning, win-back, and cross-sell (compatibility, tarot, palmistry, daily horoscope)</td><td>~$/mo by list size</td></tr></tbody></table></div>
+</section>
+
+  <section class="sec">
+    <header class="sec-head">
+      <span class="sec-idx">&sect;08</span>
+      <div class="sec-titles">
+        <h2>The build blueprint</h2>
+        <p class="sec-desc">The exact seven-stage pipeline to run this on autopilot with the client's existing stack.</p>
+      </div>
+    </header>
+    <div class="prose"><h3>The model in one line</h3>
+<p>A novelty FB/IG hook ad → a mobile quiz that harvests <strong>name + birth date + exact birth time + birth place</strong> → a <strong>Kundli API computes the real chart</strong> → <strong>Claude turns the chart JSON into a personalized reading</strong> → a <strong>Stripe cheap-trial paywall</strong> unlocks it → the trial silently rolls into a recurring subscription → email retention and cross-sell keep the LTV. Every operator in this teardown runs exactly this shape as a <strong>WEB funnel, never an app-store app</strong> — that is the whole trick: no 30% Apple/Google cut, no store review, and full control of the price/trial/coupon mechanics. The client already has Stripe, so he is one step ahead.</p>
+<h3>Stage 1 — Creative factory (autopilot)</h3>
+<p>Point <strong>veo-flow-multi</strong> at a prompt library of the winning angles (see the Winning Hooks table): <code>natal-chart relationship-pattern</code>, <code>soulmate-sketch</code>, <code>future-husband</code>, <code>aura-color</code>, <code>past-life</code>, <code>palmistry "how many kids"</code>, <code>cosmic-iq</code>, <code>witch-type</code>, plus the calm-woman <code>burnout/overthinking advertorial</code>. Generate 20–40 image/video variants per angle. Lumius proves this scales to <strong>15 languages off one funnel</strong>, so template each hook and swap the localized overlay text. The advertorials (lifestyle photo + long first-person story, no product) are the cheapest to produce and the least ad-like — run them alongside the flashy natal-wheel/orb creatives.</p>
+<h3>Stage 2 — Ad-account isolation</h3>
+<p>FB bans are a <strong>when, not if</strong> in this category. Use <strong>vantage</strong> to give each ad account its own browser fingerprint and each session a <strong>Gonzo residential proxy</strong> whose timezone/geo matches the target market. Warm accounts before spending; keep a rotating pool so one ban never stops the machine. Point every ad at a single quiz URL with UTM params (<code>utm_source=Facebook</code>, campaign/adset/ad macros) exactly as the studied funnels do.</p>
+<h3>Stage 3 — Quiz landing page (the data harvester)</h3>
+<p>Two build options:</p>
+<ul class="md-ul"><li><strong>Fast path:</strong> clone the FunnelFox pattern (Aspectica/Futurio) — a hosted SvelteKit quiz builder.</li><li><strong>Full-control path (recommended):</strong> a bespoke <strong>Next.js app on Vercel</strong>, the Lumius pattern, with <strong>Supabase</strong> for <code>funnel_events</code> and <strong>PostHog</strong> for analytics.</li></ul>
+<p>The quiz is engineered as commitment + harvest. Order that all four capture funnels converge on:</p>
+<ol class="md-ol"><li>Gender + name.</li><li>~18–24 psychographic single-select questions with affirmation interstitials (this is the sunk-cost engine — it makes the eventual reading feel "earned").</li><li><strong>DOB</strong> wheel picker → <strong>birth-time</strong> picker (with an "I don't know" option) → <strong>birth place</strong> city autocomplete, geocoded to <strong>lat/long + timezone</strong> via Google Places/Mapbox. These are the three Kundli inputs.</li><li>Animated "reading your chart / analyzing your energy" loaders with mid-loader upsell toggles.</li><li><strong>Email gate</strong> just before the wall (<code>uid = base64(email)</code> is the SkyWhisper trick — no password needed).</li><li>A "your reading is ready" <strong>blurred teaser</strong> + fake countdown + injected discount, then the paywall.</li></ol>
+<p>Optional differentiator seen in Lumius: an <strong>on-device palm photo</strong> (MediaPipe hand-landmarker) for a palmistry add-on — more "personalization," but more friction/creepiness.</p>
+<h3>Stage 4 — Chart compute (Kundli API)</h3>
+<p>On email submit, POST <code>{DOB, birthTime, lat, lng, tz}</code> to the chart engine. <strong>Recommended: VedAstro</strong> — MIT-licensed (safe for a closed Stripe SaaS, unlike the AGPL engines), uses Swiss Ephemeris internally so the math equals the paid providers, free with the <code>FreeAPIUser</code> key or <strong>$1/mo</strong> for volume, and it <strong>ships a native MCP server</strong> so Claude can tool-call the chart, dashas and guna-milan directly. It returns the full Kundli as JSON: D1 + divisional charts, planetary positions, nakshatras, Vimshottari dashas, yogas, panchang, houses. If/when you need an SLA and support, graduate the compute layer to <strong>Prokerala ($19/mo, 100k credits)</strong> or <strong>FreeAstrologyAPI ($15/mo, 50k req)</strong> — keep everything else identical.</p>
+<h3>Stage 5 — AI reading (Claude)</h3>
+<p>Pass the chart JSON into <strong>Claude</strong> with a structured, persona-locked prompt: a fixed brand voice, a template of sections (core self / relationships / the recurring-pattern narrative the ad promised / the year ahead), and a hard rule to <strong>ground every sentence in the returned chart fields</strong> so the output is genuinely personalized and not AI-slop horoscope filler. Use <strong>Haiku</strong> for the per-reading volume path (a fraction of a cent each) and <strong>Sonnet</strong> for a premium tier. Render the result to a reading page and an optional PDF. Because the chart is real and the prose is chart-grounded, the client's honest differentiator vs the shells is that the "personalized" claim is actually true.</p>
+<h3>Stage 6 — Stripe subscription paywall</h3>
+<p>The client's existing <strong>Stripe</strong> is the entire monetization layer — Payment Element + Stripe Billing subscriptions + Google/Apple Pay express + a coupon. Copy the going mechanics:</p>
+<ul class="md-ul"><li>A cheap intro: SkyWhisper's <strong>$0.99 → $14.99/week</strong>, Aspectica's <strong>$0.99 (3-day) → $39.99/mo</strong>, or Lumius's <strong>pay-what-you-want $6–$20.82 → $69.50/30 days (~$845/yr)</strong>.</li><li>Pre-applied discount coupon, a 10–15 min countdown, a struck-through anchor, and (Futurio) a rigged spin-the-wheel that always lands on the same discount.</li><li><code>setup_future_usage=off_session</code> so the card is stored for the auto-renew.</li><li><strong>hCaptcha</strong> at checkout and <strong>Stripe Radar</strong> on to hold down the dispute rate.</li></ul>
+<h3>Stage 7 — Retention / upsell (the real profit)</h3>
+<p>The trial charge barely covers ad cost; the money is in month 2+. Wire <strong>Stripe webhooks → an ESP (Klaviyo/Customer.io)</strong> to (a) deliver the reading and daily horoscope, (b) run dunning + a "3 days before your trial ends" reminder (this is also the compliance-safe version of the reminder Skool uses), (c) win-back cancelled users, and (d) cross-sell <strong>compatibility, ex-back, tarot, numerology and palmistry</strong> add-ons — Futurio's Tarot+Numerology recurring upsell and one-time guides are the template.</p>
+<h3>Autopilot wiring</h3>
+<pre class="diagram"><code>veo-flow-multi ──▶ creative library (per angle × language)
+        │
+        ▼
+FB/IG ads (vantage + Gonzo isolated accounts, UTM-tagged)
+        │
+        ▼
+Quiz LP (Next.js/Vercel + Supabase)  ──▶  Meta CAPI + PostHog (attribution/A-B)
+   name, DOB, time, place (geocoded), email
+        │  webhook on email submit
+        ▼
+VedAstro API/MCP  ──▶  chart JSON
+        │
+        ▼
+Claude (Haiku)  ──▶  personalized reading (chart-grounded)
+        │
+        ▼
+Stripe Payment Element  ──▶  $0.99–$20 trial → weekly/monthly auto-renew
+        │  webhooks
+        ▼
+ESP: deliver reading · dunning · win-back · cross-sell</code></pre>
+<p>Once the loop is live, the only human inputs are (1) topping up the creative library, (2) rotating ad accounts as they burn, and (3) watching the CAC↔LTV dashboard. Everything between the click and the recurring charge runs unattended.</p></div>
+  </section>
+
+  <section class="sec">
+    <header class="sec-head">
+      <span class="sec-idx">&sect;09</span>
+      <div class="sec-titles">
+        <h2>Verdict</h2>
+        <p class="sec-desc">Is it worth building, the realistic economics, and the risks that actually decide it.</p>
+      </div>
+    </header>
+    <div class="prose"><h3>Is it worth building? — Yes, with eyes open.</h3>
+<p><strong>The category is proven at scale.</strong> Aspectica runs ~4,000 library ads, Lumius ~2,200 across 15 languages, and Futurio/HitMeal roll up to AIBY (2B+ downloads). Multiple independent operators are spending continuously on the identical funnel — that only happens when the unit economics work. The client is uniquely well-positioned: he already has <strong>Stripe</strong> (the whole monetization layer), <strong>veo-flow-multi</strong> (the creative bottleneck others pay agencies for), and <strong>vantage + Gonzo</strong> (the ad-account survival kit). His honest edge over the shells: with a real Kundli API + Claude, the "personalized" claim is actually true, not generic AI filler.</p>
+<h3>Realistic economics</h3>
+<p><em>All figures below are reconstructed estimates from the observed funnels and each provider's public pricing — not the operators' actual conversion, retention, or margin data, which none of them disclose.</em></p>
+<ul class="md-ul"><li><strong>Revenue per subscriber:</strong> intro $0.99–$20, then $14.99/week (~$780/yr), $39.99/mo, or $69.50/30-days (~$845/yr) — <em>if retained</em>. Retention in this category is assumed weak; assume most churn within 1–2 cycles, so LTV is likely driven by the first 1–3 charges plus a long tail.</li><li><strong>Cost to serve is trivial:</strong> chart ~$0 (VedAstro free/$1), reading a few cents (Haiku), Stripe 2.9%+30¢. On those inputs the marginal gross margin per reading is near-total (estimated).</li><li><strong>The real cost is CAC.</strong> The entire game is whether blended trial-conversion × retention beats FB CPMs. That is a media-buying problem, not a build problem — the build is cheap and fast; the risk lives in the ad account and the churn curve.</li></ul>
+<h3>Main risks</h3>
+<ol class="md-ol"><li><strong>Ad-account bans (highest-frequency risk).</strong> Astrology/"psychic" + clickbait quizzes get flagged; several funnels even run anti-bot tarpits and isolated infra. This is <em>why</em> vantage+Gonzo isolation is mandatory, not optional. Budget for constant account churn.</li><li><strong>Chargeback / refund exposure (highest-severity risk).</strong> The trial-auto-renew dark pattern is a dispute magnet: <strong>HitMeal is 2.0/5 on Trustpilot (86% 1-star) and 0/100 on ScamAdviser despite 4.66 in-store</strong>, with a consistent "charged after I cancelled / couldn't find the sub" complaint cluster. High dispute ratios get Stripe accounts frozen. Mitigate with a clear billing descriptor, a genuinely working one-click cancel, a pre-charge reminder email, hCaptcha + Radar, and a real refund SLA. Consider a backup MoR processor (Solidgate/Paddle) as the others do.</li><li><strong>App Store vs web checkout.</strong> This is the settled answer, not an open one: <strong>every funnel traced bills on WEB checkout (Stripe), not through an App Store</strong> — even AIBY (Futurio/HitMeal), which does publish App Store apps, runs its acquisition and billing on the web. Web avoids the 30% cut and store content-review of "psychic" claims. Keep an "entertainment purposes only" disclaimer (several of the traced funnels show exactly this wording) and stay web-first.</li><li><strong>Reputation / entity.</strong> The shells hide behind Estonia/Cyprus/UAE entities with thin footprints. The client should decide how close to that line he wants to sit; a cleaner entity + honest, chart-grounded readings + a working cancel flow is both lower-risk and a genuine differentiator.</li></ol>
+<p><strong>Bottom line:</strong> technically a 1–2 week build (VedAstro + Claude + existing Stripe + existing creative/isolation tools) with near-zero marginal cost. The make-or-break is operational discipline on ad accounts and chargebacks, not the software.</p></div>
+  </section>
+
+  <section class="sec">
+    <header class="sec-head">
+      <span class="sec-idx">&sect;10</span>
+      <div class="sec-titles">
+        <h2>Open questions to settle before build</h2>
+        <p class="sec-desc">Eight decisions that shape the funnel &mdash; each trades conversion against chargeback and ad-account risk.</p>
+      </div>
+    </header>
+    <ol class="oq"><li>Which geo(s) and language(s) launch first? Lumius proves 15-language scale off one app — where does the client already have payment coverage and ad-approval headroom?</li><li>Vedic/Kundli or Western/tropical framing for the reading? This decides the API (VedAstro/Prokerala for Vedic vs Kerykeion for Western) and the creative angle set.</li><li>How aggressive on dark patterns (fake countdowns, pay-what-you-want trial, 93%-off coupons, spin-wheel, cancel friction)? This directly trades conversion against chargeback and ad-account-ban risk.</li><li>Trial economics: match SkyWhisper's $0.99 -&gt; $14.99/week (bills more per year, churns faster) or Lumius's $6-$20 -&gt; $69.50/mo? Pick the price ladder before building the paywall.</li><li>What legal entity, billing descriptor, cancel flow and refund SLA? Every operator uses an EU/offshore shell — the client needs these three to survive Stripe Radar and disputes.</li><li>Is the client's Stripe account prepared for this category's dispute rate, or does he want a backup MoR processor (Solidgate/Paddle) wired from day one like Futurio/HitMeal?</li><li>What does the month-2+ retention product deliver (daily horoscope, transits, compatibility, tarot) to justify the recurring charge and cut refunds? The upsell ladder is where the profit is.</li><li>Include the optional palmistry step (on-device palm photo, Lumius-style)? Extra 'personalization' and an upsell, but more friction and a creepier data ask.</li></ol>
+  </section>
+
+  <section class="sec">
+    <header class="sec-head">
+      <span class="sec-idx">&sect;11</span>
+      <div class="sec-titles">
+        <h2>Method &amp; sources</h2>
+        <p class="sec-desc">How every figure above was captured &mdash; live traces stopped before any card entry.</p>
+      </div>
+    </header>
+    <ol class="sources"><li>FB Ad Library page + creative captures (logged-out headless Chromium + Gonzo residential), pages 1083901614808820, 535192893288184, 1045413428647307, 829453310253423, 1159268630594626, 1093952923802343</li><li>Live end-to-end funnel traces to the Stripe paywall (US/EU/DK/CZ/BG/GR residential exits) for SkyWhisper, Wildly Rooted/BLOOM, Aspectica/Sentie, Futurio/HitMeal, and Lumius/Nocturnum — verbatim price ladders, trial terms and data-collection captured; stopped before any card entry</li><li>Network diligence: whois, dig NS, dig A/CNAME and IP-whois on every registrable domain (registrar, creation date, nameserver-pair and hosting-IP fingerprinting for shared-operator clustering)</li><li>Entity diligence: live Terms/Privacy/Imprint pages + Apple App Store / Google Play developer pages + Estonian e-Business Register (FTM IT OU 17181632)</li><li>Reputation checks: Apple App Store / Google Play ratings, Trustpilot, ScamAdviser, and consumer-complaint search (July 2026)</li><li>Kundli/astrology API survey: provider pricing/docs pages for VedAstro, Kerykeion/Astrologer, Swiss Ephemeris, Prokerala, FreeAstrologyAPI, AstrologyAPI.com, Divine API, VedicAstroAPI, RoxyAPI, Vedika, Kundli.Click, Astro-Seek</li></ol>
+  </section>
+
+  <footer>
+    <span>Prepared 2026-07-22 &nbsp;&bull;&nbsp; Confidential business research</span>
+    <span>noindex &bull; not for redistribution</span>
+  </footer>
+
+</main>
+</body>
+</html>
